@@ -73,3 +73,6 @@
 [submodule "vim/pack/colors/start/oceanic-material"]
 	path = vim/pack/colors/start/oceanic-material
 	url = git@github.com:nvimdev/oceanic-material.git
+[submodule "vim/pack/plugins/start/vim-markdown"]
+	path = vim/pack/plugins/start/vim-markdown
+	url = git@github.com:preservim/vim-markdown.git
