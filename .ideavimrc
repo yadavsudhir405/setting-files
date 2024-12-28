@@ -1,0 +1,73 @@
+"" -- Commmon Settings --
+set showmode
+set number relativenumber
+set scrolloff=5
+set incsearch
+"" -- Idea Specific settting
+set ideajoin
+set idearefactormode=keep
+set hlsearch
+
+let mapleader = " "
+
+"" -- Mappings --
+nnoremap J :m .+1<CR>==
+nnoremap K :m .-2<CR>==
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+"" disable arrow keys
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+
+"" map multiple cursor
+map <C-N>  <A-N>
+map <C-P>  <A-P>
+map <C-X>  <A-X>
+map g<C-N> g<A-N>
+
+"" System clipboard
+vnoremap <leader>y "+y
+vnoremap <leader>d "+d
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
+" toggle highlight"
+nnoremap <leader>h :set hlsearch!<CR>
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+
+" Do incremental searching.
+
+" Don't use Ex mode, use Q for formatting.
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+
+" Do incremental searching.
+
+" Don't use Ex mode, use Q for formatting.
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+" Plugins
+set surround
+set NERDTree
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+set highlightedyank
+set exchange
+
+""SetHandlers
+sethandler <A-n> n-v:vim
