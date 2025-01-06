@@ -8,6 +8,7 @@ eval "$(direnv hook zsh)"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.jenv/bin:$PATH"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home
 #Ideas-dev profile
 
 # Set name of the theme to load --- if set to "random", it will
@@ -85,7 +86,6 @@ ENABLE_CORRECTION="true"
 # User configuration
 
 export MANPATH="/usr/local/man:$MANPATH"
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -126,14 +126,15 @@ alias npmst='npm start'
 
 
 
-alias run-backend='mvn -f ~/IDeas/source-code/optix-backend/pom.xml spring-boot:run -s ~/IDeas/settings.xml -Dspring-boot.run.jvmArguments="-Dspring.integration.files.incoming=~/IDeas/data/input -Dspring.integration.files.processing=~/IDeas/data/processing -Dspring.integration.files.archive=~/IDeas/data/archive -Dlogging.config=/Users/sudhir/IDeas/log-config/logback.xml -Dlogging.level.com.microsoft.sqlserver.jdbc=ERROR"'
+alias run-backend='mvn -f ~/IDeas/source-code/optix-backend/pom.xml spring-boot:run -Dmaven.test.skip=true -s ~/IDeas/settings.xml -Dspring-boot.run.jvmArguments="-Dspring.integration.files.incoming=~/IDeas/data/input -Dspring.integration.files.processing=~/IDeas/data/processing -Dspring.integration.files.archive=~/IDeas/data/archive -Dlogging.config=/Users/sudhir/IDeas/log-config/logback.xml -Dlogging.level.com.microsoft.sqlserver.jdbc=ERROR"'
 alias run-job='mvn -f ~/IDeas/source-code/optix-job/pom.xml spring-boot:run -s ~/IDeas/settings.xml -Dspring-boot.run.jvmArguments="-Dspring.integration.files.incoming=~/IDeas/data/input -Dspring.integration.files.processing=~/IDeas/data/processing -Dspring.integration.files.archive=~/IDeas/data/archive -Dlogging.config=/Users/sudhir/IDeas/log-config/logback.xml -Dspring.devtools.restart.enabled=false -Dcloud.aws.credentials.profile-name=857366656205-developer"'
 alias loginsud='ssh sudhir@www.yadavsudhir.com'
 
 alias apply='terraform apply -auto-approve'
 alias destroy='terraform destroy -auto-approve'
 alias plan='terraform plan'
-alias jenvinit='eval "$(jenv init -)"'
+alias jenvinit='eval "$(jenv init -)"
+jenv enable-plugin export'
 
 alias nvminit='export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
